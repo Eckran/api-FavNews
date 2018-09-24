@@ -1,10 +1,5 @@
 var http = require('http')
-const getNews = require('./News/getNews')
+//const getNews = require('./News/getNews')
+var app = require('./app')
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write('hello');
-    res.end();
-  }).listen(3000);
-
-  
+http.createServer(app.handleRequest).listen(3000);
