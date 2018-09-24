@@ -1,5 +1,7 @@
 var url = require('url');
 
+var news = require('./News/getNews')
+
 module.exports = {
     handleRequest: function (req, res) {
         res.writeHead(200, {'Content-Type': 'text/html'})
@@ -10,6 +12,7 @@ module.exports = {
                 break;
             case '/news':
                 res.write('news page');
+                news.getNews();
                 break;
             default :
                 res.writeHead(404);
